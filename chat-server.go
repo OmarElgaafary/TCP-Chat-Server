@@ -13,7 +13,7 @@ type User struct {
 
 func handleConnection(conn net.Conn) {
 
-	fmt.Println("Please enter Username:")
+	conn.Write([]byte("Please enter Username:"))
 	userScanner := bufio.NewScanner(conn)
 
 	ok := userScanner.Scan()
